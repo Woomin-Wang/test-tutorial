@@ -4,7 +4,7 @@
 <br>
 
 ### 교재
-- 단위 테스트의 기술 - 로이 오셔로브 , 블라디미르 코리코프 저자(글) · 양문규 번역
+단위 테스트의 기술 - 로이 오셔로브 , 블라디미르 코리코프 저자(글) · 양문규 번역
 
 
 <img width="300" height="600" alt="image" src="https://github.com/user-attachments/assets/35369fe3-ec90-48b3-a8a1-059391e63579" />
