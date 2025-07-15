@@ -15,8 +15,12 @@ public class PasswordVerifier {
 
     private final List<PasswordValidationRule> rules;
 
-    public PasswordVerifier(List<PasswordValidationRule> rules) {
-        this.rules = rules;
+    public PasswordVerifier() {
+        rules = new ArrayList<>();
+    }
+
+    public void addRule(PasswordValidationRule passwordValidationRule) {
+        rules.add(passwordValidationRule);
     }
 
     public List<String> verifyPassword(String input) {
@@ -29,4 +33,6 @@ public class PasswordVerifier {
         }
         return errors;
     }
+
+
 }

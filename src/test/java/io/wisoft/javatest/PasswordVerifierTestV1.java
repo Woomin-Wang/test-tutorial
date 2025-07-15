@@ -6,15 +6,14 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("PasswordVerifier Test")
-class PasswordVerifierTest {
+class PasswordVerifierTestV1 {
 
     PasswordValidationRule failingRule = input -> new ValidationResult(false, "fake reason");
     PasswordValidationRule passingRule = input -> new ValidationResult(true, "");
+    PasswordValidationRule anotherFailingRule = input -> new ValidationResult(false, "another fake reason");
 
     @Nested
     @DisplayName("When a rule fails")
@@ -23,7 +22,8 @@ class PasswordVerifierTest {
         @Test
         @DisplayName("has an error message based on the rule's reason")
         void hasErrorMessageBasedOnRuleReason() {
-            PasswordVerifier verifier = new PasswordVerifier(List.of(failingRule));
+            PasswordVerifier verifier = new PasswordVerifier();
+            verifier.addRule(failingRule);
 
             List<String> errors = verifier.verifyPassword("any value");
 
@@ -34,7 +34,8 @@ class PasswordVerifierTest {
         @Test
         @DisplayName("has exactly one error")
         void hasExactlyOneError() {
-            PasswordVerifier verifier = new PasswordVerifier(List.of(failingRule));
+            PasswordVerifier verifier = new PasswordVerifier();
+            verifier.addRule(failingRule);
 
             List<String> errors = verifier.verifyPassword("any value");
 
@@ -49,7 +50,8 @@ class PasswordVerifierTest {
         @Test
         @DisplayName("should return no errors")
         void shouldReturnNoErrors() {
-            PasswordVerifier verifier = new PasswordVerifier(List.of(passingRule));
+            PasswordVerifier verifier = new PasswordVerifier();
+            verifier.addRule(passingRule);
 
             List<String> errors = verifier.verifyPassword("validPassword123");
 
@@ -59,7 +61,9 @@ class PasswordVerifierTest {
         @Test
         @DisplayName("should handle multiple passing rules")
         void shouldHandleMultiplePassingRules() {
-            PasswordVerifier verifier = new PasswordVerifier(List.of(passingRule, passingRule));
+            PasswordVerifier verifier = new PasswordVerifier();
+            verifier.addRule(passingRule);
+            verifier.addRule(passingRule);
 
             List<String> errors = verifier.verifyPassword("validPassword123");
 
@@ -73,8 +77,11 @@ class PasswordVerifierTest {
         @Test
         @DisplayName("should return only errors from failing rules")
         void shouldReturnOnlyErrorsFromFailingRules() {
-            PasswordValidationRule anotherFailingRule = input -> new ValidationResult(false, "another fake reason");
-            PasswordVerifier verifier = new PasswordVerifier(List.of(passingRule, failingRule, anotherFailingRule, passingRule));
+            PasswordVerifier verifier = new PasswordVerifier();
+            verifier.addRule(passingRule);
+            verifier.addRule(failingRule);
+            verifier.addRule(anotherFailingRule);
+            verifier.addRule(passingRule);
 
             List<String> errors = verifier.verifyPassword("any value");
 
