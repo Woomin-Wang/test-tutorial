@@ -3,11 +3,11 @@ package io.wisoft.javatest;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PasswordVerifier {
+public class PasswordVerifierError {
 
     private final List<PasswordValidationRule> rules;
 
-    public PasswordVerifier() {
+    public PasswordVerifierError() {
         rules = new ArrayList<>();
     }
 
@@ -17,9 +17,14 @@ public class PasswordVerifier {
 
     public List<String> verifyPassword(String input) {
         List<String> errors = new ArrayList<>();
+
+        if (rules.isEmpty()) {
+            throw new IllegalStateException("no rules configured");
+        }
+
         for (PasswordValidationRule rule : rules) {
             ValidationResult result = rule.apply(input);
-            if(!result.passed()) {
+            if (!result.passed()) {
                 errors.add("error " + result.reason());
             }
         }

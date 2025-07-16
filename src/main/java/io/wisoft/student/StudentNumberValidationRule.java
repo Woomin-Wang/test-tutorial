@@ -1,4 +1,4 @@
-package io.wisoft.javatest.student;
+package io.wisoft.student;
 
 public interface StudentNumberValidationRule {
 }

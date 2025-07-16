@@ -14,6 +14,10 @@ class PasswordVerifierTestV2 {
 
     PasswordVerifier verifier;
 
+    PasswordValidationRule failingRule = input -> new ValidationResult(false, "fake reason");
+    PasswordValidationRule passingRule = input -> new ValidationResult(true, "");
+    PasswordValidationRule anotherFailingRule = input -> new ValidationResult(false, "another fake reason");
+
     @BeforeEach
     void setUp() {
         verifier = new PasswordVerifier();
@@ -95,9 +99,6 @@ class PasswordVerifierTestV2 {
             assertThat(errors).containsExactlyInAnyOrder("error fake reason", "error another fake reason");
         }
     }
-    PasswordValidationRule failingRule = input -> new ValidationResult(false, "fake reason");
-    PasswordValidationRule passingRule = input -> new ValidationResult(true, "");
-    PasswordValidationRule anotherFailingRule = input -> new ValidationResult(false, "another fake reason");
 }
 
 

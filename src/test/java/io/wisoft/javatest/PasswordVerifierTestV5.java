@@ -10,9 +10,12 @@ import org.junit.jupiter.params.provider.CsvSource;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("PasswordVerifier Test")
-class PasswordVerifierTestV4 {
+class PasswordVerifierTestV5 {
 
     @Nested
     @DisplayName("When a rule fails")
@@ -124,6 +127,34 @@ class PasswordVerifierTestV4 {
         void shouldReturnTrueIfPasswordContainsUppercase(String input, boolean expected) {
             ValidationResult result = oneUpperCaseRule.apply(input);
             Assertions.assertThat(result.passed()).isEqualTo(expected);
+        }
+    }
+
+    @Nested
+    @DisplayName("Verify password error scenarios")
+    class VerifyPasswordErrorTest {
+
+        @Test
+        @DisplayName("Throws exception when no rules are configured")
+        void throwsExceptionWhenNoRulesAreConfigured() {
+            PasswordVerifierError verifier = new PasswordVerifierError();
+            try {
+                verifier.verifyPassword("any value");
+                // fail("Exception was expected but not thrown");
+            } catch (IllegalStateException e) {
+                assertTrue(e.getMessage().contains("no rules configured"));
+            }
+        }
+
+        @Test
+        @DisplayName("Throws IllegalStateException when no rules are configured")
+        void shouldContainCorrectErrorMessage() {
+            PasswordVerifierError verifier = new PasswordVerifierError();
+            // verifier.addRule(passingRule);
+
+            IllegalStateException exception = assertThrows(IllegalStateException.class, () -> verifier.verifyPassword("any value"));
+
+            assertTrue(exception.getMessage().contains("no rules configure"));
         }
     }
 }

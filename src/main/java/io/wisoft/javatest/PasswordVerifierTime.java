@@ -3,11 +3,11 @@ package io.wisoft.javatest;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PasswordVerifier {
+public class PasswordVerifierTime {
 
     private final List<PasswordValidationRule> rules;
 
-    public PasswordVerifier() {
+    public PasswordVerifierTime() {
         rules = new ArrayList<>();
     }
 
