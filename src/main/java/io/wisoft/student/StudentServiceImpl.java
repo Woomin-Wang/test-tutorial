@@ -19,8 +19,8 @@ public class StudentServiceImpl implements StudentService {
         Student newStudent = new Student(id, name);
         Student existingStudent = studentMap.putIfAbsent(id, newStudent);
 
-        if(existingStudent != null) {
-            throw new IllegalStateException("ID already exists:" + id);
+        if (existingStudent != null) {
+            throw new IllegalStateException("ID already exists: " + id);
         }
         return newStudent;
     }
@@ -31,19 +31,19 @@ public class StudentServiceImpl implements StudentService {
 
         Student removedStudent = studentMap.remove(id);
 
-        if(removedStudent == null) {
+        if (removedStudent == null) {
             throw new IllegalStateException("ID does not exist: " + id);
         }
     }
 
     private void validateInput(String id, String name) {
-        if(StringUtils.isBlank(id) || StringUtils.isBlank(name)) {
+        if (StringUtils.isBlank(id) || StringUtils.isBlank(name)) {
             throw new IllegalArgumentException("Student ID and name cannot be blank.");
         }
     }
 
     private void validateInput(String id) {
-        if(StringUtils.isBlank(id)) {
+        if (StringUtils.isBlank(id)) {
             throw new IllegalArgumentException("Student ID cannot be blank.");
         }
     }
