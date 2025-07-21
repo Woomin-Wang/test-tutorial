@@ -1,4 +1,4 @@
-package io.wisoft.javatest;
+package io.wisoft.javatest.ch2;
 
 @FunctionalInterface
 public interface PasswordValidationRule {

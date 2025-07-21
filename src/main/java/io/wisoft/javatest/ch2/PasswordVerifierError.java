@@ -1,4 +1,4 @@
-package io.wisoft.javatest;
+package io.wisoft.javatest.ch2;
 
 import java.util.ArrayList;
 import java.util.List;

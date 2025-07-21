@@ -1,4 +1,4 @@
-package io.wisoft.javatest;
+package io.wisoft.javatest.ch2;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

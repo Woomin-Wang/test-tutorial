@@ -1,4 +1,4 @@
-package io.wisoft.unitTest.ch1;
+package io.wisoft.javatest.ch1;
 
 public class NumberParser2 {
 

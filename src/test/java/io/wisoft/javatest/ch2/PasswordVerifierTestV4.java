@@ -1,15 +1,18 @@
-package io.wisoft.javatest;
+package io.wisoft.javatest.ch2;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("PasswordVerifier Test")
-class PasswordVerifierTestV3 {
+class PasswordVerifierTestV4 {
 
     @Nested
     @DisplayName("When a rule fails")
@@ -101,9 +104,28 @@ class PasswordVerifierTestV3 {
 
         return verifier;
     }
+
     PasswordValidationRule failingRule = input -> new ValidationResult(false, "fake reason");
     PasswordValidationRule passingRule = input -> new ValidationResult(true, "");
     PasswordValidationRule anotherFailingRule = input -> new ValidationResult(false, "another fake reason");
+    PasswordValidationRule oneUpperCaseRule = input -> new ValidationResult(!input.toLowerCase().equals(input), "at least one upper case needed");
+
+    @Nested
+    @DisplayName("When a password contains at least one uppercase letter")
+    class oneUpperCaseRuleTest {
+
+        @ParameterizedTest
+        @CsvSource({
+            "Abc, true",
+            "aBc, true",
+            "abc, false"
+        })
+        @DisplayName("it should return the correct validation result")
+        void shouldReturnTrueIfPasswordContainsUppercase(String input, boolean expected) {
+            ValidationResult result = oneUpperCaseRule.apply(input);
+            Assertions.assertThat(result.passed()).isEqualTo(expected);
+        }
+    }
 }
 
 

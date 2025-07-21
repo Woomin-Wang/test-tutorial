@@ -109,7 +109,7 @@ class StudentServiceImplTestV2 {
         }
 
         @Test
-        @DisplayName("Should throw IllegalStateException when removing with a non-existing Id")
+        @DisplayName("Should throw IllㅋegalStateException when removing with a non-existing Id")
         void removeWithNonExistingIdShouldThrowIllegalStateException() {
             // Given
             String noExistingId = "noExistingId";
