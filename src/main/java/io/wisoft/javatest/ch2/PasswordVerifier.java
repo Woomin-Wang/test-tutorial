@@ -16,10 +16,12 @@ public class PasswordVerifier {
     }
 
     public List<String> verifyPassword(String input) {
+
         List<String> errors = new ArrayList<>();
+
         for (PasswordValidationRule rule : rules) {
             ValidationResult result = rule.apply(input);
-            if(!result.passed()) {
+            if (!result.passed()) {
                 errors.add("error " + result.reason());
             }
         }

@@ -22,8 +22,8 @@ class StudentServiceImplTestV1 {
     @DisplayName("The create method")
     class CreateTest {
         @Test
-        @DisplayName("Should create and return a new student when given a valid Id and name")
-        void createWithValidInputsShouldReturnNewStudent() {
+        @DisplayName("유효한 ID와 이름으로 학생 생성 시, 새로운 학생을 반환해야 한다")
+        void create_withValidIdAndName_returnsNewStudent() {
             // Given
             String id = "validId";
             String name = "validName";
@@ -38,8 +38,8 @@ class StudentServiceImplTestV1 {
         }
 
         @Test
-        @DisplayName("Should throw IllegalStateException when creating a student with a duplicate ID")
-        void createWithExistingIdShouldThrowIllegalStateException() {
+        @DisplayName("중복된 ID로 학생 생성 시, IllegalStateException을 던져야 한다")
+        void create_withExistingId_throwsIllegalStateException() {
             // Given
             String duplicateId = "existingId";
             studentService.create(duplicateId, "anyName");
@@ -52,8 +52,8 @@ class StudentServiceImplTestV1 {
         }
 
         @Test
-        @DisplayName("Should throw IllegalArgumentException when Id and name are null")
-        void createWithNullIdAndNameShouldThrowIllegalArgumentException() {
+        @DisplayName("ID와 이름이 null일 때 IllegalArgumentException을 던져야 한다")
+        void create_withNullIdAndName_throwsIllegalArgumentException() {
             // Given
             String id = null;
             String name = null;
@@ -66,8 +66,8 @@ class StudentServiceImplTestV1 {
         }
 
         @Test
-        @DisplayName("Should throw IllegalArgumentException when Id is null")
-        void createWithNullIdShouldThrowIllegalArgumentException() {
+        @DisplayName("ID가 null일 때 IllegalArgumentException을 던져야 한다")
+        void create_withNullId_throwsIllegalArgumentException() {
             // Given
             String id = null;
             String name = "validName";
@@ -80,8 +80,8 @@ class StudentServiceImplTestV1 {
         }
 
         @Test
-        @DisplayName("Should throw IllegalArgumentException when name is null")
-        void createWithNullNameShouldThrowIllegalArgumentException() {
+        @DisplayName("이름이 null일 때 IllegalArgumentException을 던져야 한다")
+        void create_withNullName_throwsIllegalArgumentException() {
             // Given
             String id = "validId";
             String name = null;
@@ -98,8 +98,8 @@ class StudentServiceImplTestV1 {
     @DisplayName("The remove method")
     class RemoveTest {
         @Test
-        @DisplayName("Should succeed without exception when removing with an existing Id")
-        void removeWithExistingIdShouldSucceedWithoutException() {
+        @DisplayName("기존 ID로 삭제 시 예외 없이 성공해야 한다")
+        void remove_withExistingId_succeedsWithoutException() {
             // Given
             String existingId = "existingId";
             studentService.create(existingId, "anyName");
@@ -109,8 +109,8 @@ class StudentServiceImplTestV1 {
         }
 
         @Test
-        @DisplayName("Should throw IllegalArgumentException when removing with a null Id")
-        void removeWithNullIdShouldThrowIllegalArgumentException() {
+        @DisplayName("ID가 null일 때 IllegalArgumentException을 던져야 한다")
+        void remove_withNullId_throwsIllegalArgumentException() {
             // Given
             String id = null;
 
@@ -122,8 +122,8 @@ class StudentServiceImplTestV1 {
         }
 
         @Test
-        @DisplayName("Should throw IllegalStateException when removing with a non-existing Id")
-        void removeWithNonExistingIdShouldThrowIllegalStateException() {
+        @DisplayName("존재하지 않는 ID로 삭제 시 IllegalStateException을 던져야 한다")
+        void remove_withNonExistingId_throwsIllegalStateException() {
             // Given
             String noExistingId = "noExistingId";
 

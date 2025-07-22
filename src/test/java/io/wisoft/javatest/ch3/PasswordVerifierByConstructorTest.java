@@ -1,5 +1,6 @@
 package io.wisoft.javatest.ch3;
 
+import io.wisoft.javatest.ch2.PasswordValidationRule;
 import io.wisoft.javatest.ch2.PasswordVerifier;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -20,7 +21,7 @@ class PasswordVerifierByConstructorTest {
     void verify_onWeekday_returnsNoErrors() {
         // Given
         Supplier<DayOfWeek> alwaysMonday = () -> DayOfWeek.MONDAY;
-        PasswordVerifierByConstructor verifier = new PasswordVerifierByConstructor(new ArrayList<>(), alwaysMonday);
+        PasswordVerifierByConstructor verifier = makeVerifier(new ArrayList<>(), alwaysMonday);
 
         // When
         List<String> errors = verifier.verifyPassword("anything");
@@ -35,12 +36,16 @@ class PasswordVerifierByConstructorTest {
     void verify_onWeekend_throwsException() {
         // Given
         Supplier<DayOfWeek> alwaysSunday = () -> DayOfWeek.SUNDAY;
-        PasswordVerifierByConstructor verifier = new PasswordVerifierByConstructor(new ArrayList<>(), alwaysSunday);
+        PasswordVerifierByConstructor verifier = makeVerifier(new ArrayList<>(), alwaysSunday);
 
         // When & Then
         IllegalStateException exception = assertThrows(IllegalStateException.class,
                 () -> verifier.verifyPassword("anything"));
 
         assertEquals("It's the weekend!", exception.getMessage(), "Exception message should match");
+    }
+
+    private PasswordVerifierByConstructor makeVerifier(List<PasswordValidationRule> rules, Supplier<DayOfWeek> dayOfWeekSupplier) {
+        return new PasswordVerifierByConstructor(rules, dayOfWeekSupplier);
     }
 }

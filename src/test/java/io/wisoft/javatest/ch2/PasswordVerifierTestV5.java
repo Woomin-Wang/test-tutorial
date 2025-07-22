@@ -45,7 +45,6 @@ class PasswordVerifierTestV5 {
     @DisplayName("When all rules pass")
     class PassingRuleScenario {
 
-
         @Test
         @DisplayName("should return no errors")
         void shouldReturnNoErrors() {
@@ -138,9 +137,11 @@ class PasswordVerifierTestV5 {
         @DisplayName("Throws exception when no rules are configured")
         void throwsExceptionWhenNoRulesAreConfigured() {
             PasswordVerifierError verifier = new PasswordVerifierError();
+//            verifier.addRule(failingRule);
+
             try {
                 verifier.verifyPassword("any value");
-                // fail("Exception was expected but not thrown");
+//                fail("Exception was expected but not thrown");
             } catch (IllegalStateException e) {
                 assertTrue(e.getMessage().contains("no rules configured"));
             }
@@ -149,10 +150,13 @@ class PasswordVerifierTestV5 {
         @Test
         @DisplayName("Throws IllegalStateException when no rules are configured")
         void shouldContainCorrectErrorMessage() {
+            // Given
             PasswordVerifierError verifier = new PasswordVerifierError();
-            // verifier.addRule(passingRule);
+//             verifier.addRule(passingRule);
 
-            IllegalStateException exception = assertThrows(IllegalStateException.class, () -> verifier.verifyPassword("any value"));
+            // When & Then
+            IllegalStateException exception = assertThrows(IllegalStateException.class,
+                    () -> verifier.verifyPassword("any value"));
 
             assertTrue(exception.getMessage().contains("no rules configure"));
         }

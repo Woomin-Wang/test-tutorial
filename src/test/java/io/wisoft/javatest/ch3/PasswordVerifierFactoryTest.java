@@ -21,11 +21,12 @@ class PasswordVerifierFactoryTest {
         Supplier<DayOfWeek> alwaysMonday = () -> DayOfWeek.MONDAY;
         Function<String, List<String>> verifier = PasswordVerifierFactory.makeVerifier(new ArrayList<>(), alwaysMonday);
 
-        // When & Then
-        assertDoesNotThrow(() -> {
-            List<String> errors = verifier.apply("anything");
-            assertTrue(errors.isEmpty());
-        });
+        // When
+        List<String> errors = verifier.apply("anything");
+
+        // Then
+        assertNotNull(errors);
+        assertTrue(errors.isEmpty());
     }
 
     @Test
