@@ -20,11 +20,9 @@ public class PasswordVerifierByMethodArg {
         rules.add(passwordValidationRule);
     }
 
-    public List<String> verifyPassword(String input, LocalDate currentDay) {
+    public List<String> verifyPassword(String input, DayOfWeek currentDay) {
 
-        DayOfWeek dayOfWeek = currentDay.getDayOfWeek();
-
-        if(dayOfWeek == DayOfWeek.SATURDAY || dayOfWeek == DayOfWeek.SUNDAY) {
+        if(currentDay == DayOfWeek.SATURDAY || currentDay == DayOfWeek.SUNDAY) {
             throw new IllegalStateException("It's the weekend!");
         }
 

@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -23,7 +24,7 @@ class PasswordVerifierByMethodArgTest {
     @DisplayName("평일에는 예외를 던지지 않아야 합니다.")
     void verify_onWeekday_doesNotThrowException() {
         // Given
-        LocalDate aMonday = LocalDate.of(2025, 7, 28);
+        DayOfWeek aMonday = DayOfWeek.MONDAY;
 
         // When
         List<String> errors = verifier.verifyPassword("anything", aMonday);
@@ -37,7 +38,7 @@ class PasswordVerifierByMethodArgTest {
     @DisplayName("주말에는 예외를 던져야 합니다.")
     void verify_onWeekend_throwsException() {
         // Given
-        LocalDate aSunday = LocalDate.of(2025, 7, 27);
+        DayOfWeek aSunday = DayOfWeek.SUNDAY;
 
         // When & Then
         IllegalStateException exception = assertThrows(IllegalStateException.class,
