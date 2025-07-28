@@ -1,15 +1,16 @@
 package io.wisoft.javatest.ch4;
 
+import io.wisoft.javatest.ch4.external.IComplicatedLogger;
 import io.wisoft.javatest.ch4.external.ILogger;
 
 import java.util.List;
 import java.util.function.Predicate;
 
-public class PasswordVerifierWithConstructorInjection {
+public class PasswordVerifierWithComplicatedLogger {
     private final List<Predicate<String>> rules;
-    private final ILogger logger;
+    private final IComplicatedLogger logger;
 
-    public PasswordVerifierWithConstructorInjection(List<Predicate<String>> rules, ILogger logger) {
+    public PasswordVerifierWithComplicatedLogger(List<Predicate<String>> rules, IComplicatedLogger logger) {
         this.rules = rules;
         this.logger = logger;
     }
