@@ -2,13 +2,12 @@ package io.wisoft.javatest.ch3;
 
 import io.wisoft.javatest.ch2.PasswordValidationRule;
 import io.wisoft.javatest.ch2.ValidationResult;
-import io.wisoft.javatest.ch3.adapters.RealTimeProvider;
-import io.wisoft.javatest.ch3.ports.TimeProvider;
+import io.wisoft.javatest.ch3.time.RealTimeProvider;
+import io.wisoft.javatest.ch3.time.TimeProvider;
 
 import java.time.DayOfWeek;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Supplier;
 
 public class PasswordVerifierWithTimeProvider {
 

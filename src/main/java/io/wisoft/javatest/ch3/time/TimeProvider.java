@@ -1,4 +1,4 @@
-package io.wisoft.javatest.ch3.ports;
+package io.wisoft.javatest.ch3.time;
 
 import java.time.DayOfWeek;
 

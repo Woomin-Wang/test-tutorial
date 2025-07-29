@@ -1,6 +1,4 @@
-package io.wisoft.javatest.ch3.adapters;
-
-import io.wisoft.javatest.ch3.ports.TimeProvider;
+package io.wisoft.javatest.ch3.time;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;

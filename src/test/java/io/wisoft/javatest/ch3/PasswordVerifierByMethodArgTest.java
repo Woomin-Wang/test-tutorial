@@ -20,7 +20,6 @@ class PasswordVerifierByMethodArgTest {
         verifier = new PasswordVerifierByMethodArg();
     }
 
-
     @Test
     @DisplayName("평일에는 예외를 던지지 않아야 합니다.")
     void verify_onWeekday_doesNotThrowException() {

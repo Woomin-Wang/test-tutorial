@@ -1,13 +1,8 @@
 package io.wisoft.javatest.ch3;
 
-import io.wisoft.javatest.ch2.PasswordValidationRule;
-import io.wisoft.javatest.ch2.ValidationResult;
-
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class PasswordVerifierWithSeam {

@@ -16,8 +16,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PasswordVerifierByConstructorTest {
 
+    private static PasswordVerifierByConstructor makeVerifier(List<PasswordValidationRule> rules, Supplier<DayOfWeek> dayOfWeekSupplier) {
+        return new PasswordVerifierByConstructor(rules, dayOfWeekSupplier);
+    }
+
     @Test
-    @DisplayName("평일에는 에러가 발생하지 않아야 합니다.")
+    @DisplayName("평일이고 추가 규칙이 없을 때, 에러 없이 통과해야 한다")
     void verify_onWeekday_returnsNoErrors() {
         // Given
         Supplier<DayOfWeek> alwaysMonday = () -> DayOfWeek.MONDAY;
@@ -42,10 +46,6 @@ class PasswordVerifierByConstructorTest {
         IllegalStateException exception = assertThrows(IllegalStateException.class,
                 () -> verifier.verifyPassword("anything"));
 
-        assertEquals("It's the weekend!", exception.getMessage(), "Exception message should match");
-    }
-
-    private PasswordVerifierByConstructor makeVerifier(List<PasswordValidationRule> rules, Supplier<DayOfWeek> dayOfWeekSupplier) {
-        return new PasswordVerifierByConstructor(rules, dayOfWeekSupplier);
+        assertEquals("It's the weekend!", exception.getMessage(), "예외 메시지가 같아야 합니다.");
     }
 }
