@@ -27,15 +27,10 @@ public class PasswordVerifierWithStaticDependencyManagement {
         }
     }
 
-    private static final Dependencies ORIGINAL_DEPENDENCIES = new Dependencies(
-            new ComplicatedLogger(),
-            new ConfigurationService()
-    );
-
-    private static Dependencies dependencies = ORIGINAL_DEPENDENCIES;
+    private static Dependencies dependencies;
 
     public static void resetDependencies() {
-        dependencies = ORIGINAL_DEPENDENCIES;
+        dependencies = new Dependencies(new ComplicatedLogger(), new ConfigurationService());
     }
 
     public static void injectDependencies(Dependencies fakes) {
@@ -44,7 +39,7 @@ public class PasswordVerifierWithStaticDependencyManagement {
 
     private static void log(String text) {
         if ("info".equals(dependencies.getConfigService().getLogLevel())) {
-            dependencies.getLogger().info(text);
+             dependencies.getLogger().info(text);
         }
         if ("debug".equals(dependencies.getConfigService().getLogLevel())) {
             dependencies.getLogger().debug(text);

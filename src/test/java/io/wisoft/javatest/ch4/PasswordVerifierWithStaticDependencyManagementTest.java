@@ -3,6 +3,7 @@ package io.wisoft.javatest.ch4;
 import io.wisoft.javatest.ch4.external.ConfigurationService;
 import io.wisoft.javatest.ch4.external.ILogger;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,6 +15,7 @@ import java.util.List;
 import java.util.function.Predicate;
 
 import static io.wisoft.javatest.ch4.PasswordVerifierWithStaticDependencyManagement.*;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
