@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.function.Predicate;
 
 import static io.wisoft.javatest.ch4.PasswordVerifierWithStaticDependencyManagement.*;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
