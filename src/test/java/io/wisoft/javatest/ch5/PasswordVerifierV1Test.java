@@ -1,6 +1,5 @@
 package io.wisoft.javatest.ch5;
 
-import io.wisoft.javatest.ch5.PasswordVerifier;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -16,7 +15,7 @@ import static org.mockito.Mockito.*;
 
 @DisplayName("PasswordVerifier 단위 테스트")
 @ExtendWith(MockitoExtension.class)
-class PasswordVerifierTest {
+class PasswordVerifierV1Test {
 
     @Mock
     private LoggerService mockLogger;
@@ -25,7 +24,7 @@ class PasswordVerifierTest {
     private ConfigurationService mockConfig;
 
     @InjectMocks
-    private PasswordVerifier passwordVerifier;
+    private PasswordVerifierV1 passwordVerifier;
 
 
     @Nested

@@ -3,12 +3,12 @@ package io.wisoft.javatest.ch5;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class PasswordVerifier {
+public class PasswordVerifierV1 {
 
     private final LoggerService logger;
     private final ConfigurationService config;
 
-    public PasswordVerifier(LoggerService logger, ConfigurationService config) {
+    public PasswordVerifierV1(LoggerService logger, ConfigurationService config) {
         this.logger = logger;
         this.config = config;
     }
