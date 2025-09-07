@@ -21,8 +21,8 @@ WiSoft 연구실에서 진행한 테스트 세미나의 실습 및 과제 코드
 - [Chap03. 의존성 분리와 스텁](https://familiar-dragon-4ed.notion.site/Chap03-231bf88cd0f580fcab22d4a2d62ddd9c?source=copy_link)
 - [Chap04. 모의 객체를 사용한 상호 작용 테스트](https://familiar-dragon-4ed.notion.site/Chap-04-23bbf88cd0f58085937af733332f16b3?source=copy_link)
 - [Chap05. 격리 프레임워크](https://familiar-dragon-4ed.notion.site/Chap05-23dbf88cd0f580bfb602c2eb26b84871?source=copy_link)
-- [Chap06. 비동기 코드 단위 테스트](https://familiar-dragon-4ed.notion.site/Chap06-255bf88cd0f5807cab6bd2c48bac5f8f?source=copy_link)
-
+- [Chap06. 비동기 코드 단위 테스트](https://familiar-dragon-4ed.notion.site/Chap06-266bf88cd0f58002838ac55d74a52d03?source=copy_link)
+  
 <br>
 
 - [[과제] 학생 추가/삭제 테스트](https://familiar-dragon-4ed.notion.site/231bf88cd0f58001a758dbcba609ca11?source=copy_link)
