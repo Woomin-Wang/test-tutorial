@@ -29,6 +29,7 @@ public class PasswordVerifierV4 {
             this.logger.info("PASSED", "verify");
             return true;
         }
+
         this.logger.info("FAIL", "verify");
         return false;
     }

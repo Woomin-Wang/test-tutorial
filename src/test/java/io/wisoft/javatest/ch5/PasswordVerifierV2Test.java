@@ -59,7 +59,7 @@ class PasswordVerifierV2Test {
         @Test
         @DisplayName("검증 통과 시, logger.info가 'PASSED'를 포함한 문자열로 호출되는지 검증한다")
         void givenPassingScenario_whenValidated_thenLoggerInfoIsCalled() {
-            // Given (준비)
+            // Given
             PasswordVerifierV2 passwordVerifier = new PasswordVerifierV2(mockLog);
 
             // When

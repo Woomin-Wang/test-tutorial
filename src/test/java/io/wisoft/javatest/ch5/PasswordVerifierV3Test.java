@@ -75,12 +75,14 @@ class PasswordVerifierV3Test {
             verifier.verify("any-password");
 
             // Then
-//            verify(mockLogger).info("PASSED", "verify");
+            verify(mockLogger).info("PASSED", "verify");
 
-            verify(mockLogger).info(
-                    contains("PASS"),
-                    eq("verify")
-            );
+//            verify(mockLogger).info(
+//                    contains("PASS"),
+//                    eq("verify")
+//            );
+
+//            verify(mockLogger).info("PASSED", contains("verify"));    // 예외 발생
         }
     }
 }
