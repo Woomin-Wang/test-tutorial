@@ -1,5 +1,5 @@
 ## 학습 내용
-WiSoft 연구실에서 진행한 테스트 세미나의 실습 및 과제 코드를 기록합니다.
+WiSoft 연구실에서 진행한 테스트 세미나의 실습 및 과제 코드를 기록하였습니다.
 
 <br>
 
@@ -26,9 +26,6 @@ WiSoft 연구실에서 진행한 테스트 세미나의 실습 및 과제 코드
 <br>
 
 - [[과제] 학생 추가/삭제 테스트](https://familiar-dragon-4ed.notion.site/231bf88cd0f58001a758dbcba609ca11?source=copy_link)
-
-<br>
-
 - [JUnit을 활용한 좋은 단위 테스트, 어떻게 할까?](https://woomin-wang.tistory.com/entry/JUnit%EC%9D%84-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%A2%8B%EC%9D%80-%EB%8B%A8%EC%9C%84-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%A0%EA%B9%8C)
 
 <br>
