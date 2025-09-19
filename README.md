@@ -1,5 +1,5 @@
 ## 학습 내용
-WiSoft 연구실에서 진행한 테스트 세미나의 실습 및 과제 코드를 기록하였습니다.
+WiSoft 연구실에서 진행한 테스트 세미나의 개념 및 실습 코드를 정리하였습니다.
 
 <br>
 
@@ -8,7 +8,6 @@ WiSoft 연구실에서 진행한 테스트 세미나의 실습 및 과제 코드
 
 
 <img width="300" height="600" alt="image" src="https://github.com/user-attachments/assets/35369fe3-ec90-48b3-a8a1-059391e63579" />
-
 
 <br>
 <br>
