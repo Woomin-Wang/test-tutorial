@@ -20,6 +20,7 @@ WiSoftLab 테스트 세미나에서 다룬 단위 테스트의 핵심 개념과 
 - [모의 객체를 사용한 상호 작용 테스트](https://familiar-dragon-4ed.notion.site/Chap-04-23bbf88cd0f58085937af733332f16b3?source=copy_link)
 - [격리 프레임워크](https://familiar-dragon-4ed.notion.site/Chap05-23dbf88cd0f580bfb602c2eb26b84871?source=copy_link)
 - [비동기 코드 단위 테스트](https://familiar-dragon-4ed.notion.site/Chap06-266bf88cd0f58002838ac55d74a52d03?source=copy_link)
+- [신뢰할 수 있는 테스트](https://familiar-dragon-4ed.notion.site/Chap07-27dbf88cd0f580a6b8b4df0adc11b64c?source=copy_link)
   
 <br>
 
