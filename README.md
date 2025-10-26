@@ -21,6 +21,7 @@ WiSoftLab 테스트 세미나에서 다룬 단위 테스트의 핵심 개념과 
 - [격리 프레임워크](https://familiar-dragon-4ed.notion.site/Chap05-23dbf88cd0f580bfb602c2eb26b84871?source=copy_link)
 - [비동기 코드 단위 테스트](https://familiar-dragon-4ed.notion.site/Chap06-266bf88cd0f58002838ac55d74a52d03?source=copy_link)
 - [신뢰할 수 있는 테스트](https://familiar-dragon-4ed.notion.site/Chap07-27dbf88cd0f580a6b8b4df0adc11b64c?source=copy_link)
+- [가독성](https://familiar-dragon-4ed.notion.site/Chap09-298bf88cd0f58098b340da35fd4f8f97?source=copy_link)
   
 <br>
 
